@@ -1,22 +1,21 @@
 ###DATA DICTIONARY - Human Activity Recognition Using Smartphones
 
-
+* ID: Identification for each user
+* Activity: The activity the user performed 
 * mean(): Mean value
 * std(): Standard deviation
-* mad(): Median absolute deviation 
-* max(): Largest value in array
-* min(): Smallest value in array
-* sma(): Signal magnitude area
-* energy(): Energy measure. Sum of the squares divided by the number of values. 
-* iqr(): Interquartile range 
-* entropy(): Signal entropy
-* arCoeff(): Autorregresion coefficients with Burg order equal to 4
-* correlation(): correlation coefficient between two signals
-* maxInds(): index of the frequency component with largest magnitude
-* meanFreq(): Weighted average of the frequency components to obtain a mean frequency
-* skewness(): skewness of the frequency domain signal 
-* kurtosis(): kurtosis of the frequency domain signal 
-* bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
-* angle(): Angle between to vectors.
+* XYZ : Movements in X, Y, Z directions
+* BodyAcc: Body acceleration signal
+* GravityAcc: Gracity acceleration signal
+* BodyAccJerk: Body acceleration jerk signal
+* BodyGyro: Body gyroscope signal
+* BodyGyroJerk: Body gyroscope jerk signal
+* BodyAccMag: Body acceleration magnitude
+* GravityAccMag: Gracity acceleration magnitude
+* BodyAccJerkMag: Body acceleration jerk magnitude
+* BodyGyroMag: Body gyroscope magnitude
+* BodyGyroJerkMag: Body gyroscope jerk magnitude
+* prefix t: Time domain signal
+* prefix f: Frequency doman signal
 
 
