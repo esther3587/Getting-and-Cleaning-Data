@@ -1,4 +1,4 @@
--> DATA DICTIONARY - Human Activity Recognition Using Smartphones <-
+###DATA DICTIONARY - Human Activity Recognition Using Smartphones
 
 
 * mean(): Mean value
