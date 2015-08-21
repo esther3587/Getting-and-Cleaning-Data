@@ -16,9 +16,9 @@ Test<-cbind(X_test,y_test,subject_test)
 ##combine Train data
 Train<-cbind(X_train,y_train,subject_train)
 
-##combine train and test(Train data are top 7352 rows, test data are 2947 rows)
+##combine train and test(Train data are top 7352 rows, test data are the following 2947 rows)
 ActivityData<-rbind(Train,Test)
-##rename columns
+##rename columns with the feature names
 colnames(ActivityData)<-features[,2]
 colnames(ActivityData)[562]<-"Activity"
 colnames(ActivityData)[563]<-"ID"
@@ -27,11 +27,11 @@ colnames(ActivityData)[563]<-"ID"
 ##Select only mean() and std() data 
 stdcoln<-grep("std()",features[,2], fixed=TRUE)
 meancoln<-grep("mean()",features[,2], fixed = TRUE)
-selectcol <- c(meancoln,stdcoln)
-selectcol <- sort(selectcol) ##selectcol contains the column numbers of mean()/std()
-TidyData<-ActivityData[c(selectcol,562,563)]
+selectcol <- c(meancoln,stdcoln) ##selectcol contains the column numbers of mean()/std()
+selectcol <- sort(selectcol)
+TidyData<-ActivityData[c(selectcol,562,563)] ##TidyData now contains only mean() and std() data
 
-##create second tidy data frame to store the average
+##create second tidy data frame to store the average for each activity and volunteer
 Tidy2<-data.frame()
 
 for(i in 1:30){
@@ -40,7 +40,7 @@ for(i in 1:30){
         Tidy2<- rbind(Tidy2,average) 
     }
 }
-##rename the columns
+##rename the columns with feature names 
 colnames(Tidy2) <- colnames(TidyData)
 ##rename the activity labels
 Tidy2$Activity[Tidy2$Activity==1]<-"WALKING"
@@ -52,5 +52,7 @@ Tidy2$Activity[Tidy2$Activity==6]<-"LAYING"
 
 
 Tidy2 <- Tidy2[c(68,67,1:66)]  ##move id and label columns to the front
+
+##writing table to file
 setwd("../")
-write.table(Tidy2,"tidydata.txt")
+write.table(Tidy2,"tidydata.txt",row.names=FALSE)
