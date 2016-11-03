@@ -1,4 +1,4 @@
-## Getting-and-Cleaning-Data-Course-Project
+## Introduction
 
 In this project, I took data from this following link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 ,which contains data collected from the accelerometers from the Samsung Galaxy S smartphone.
